@@ -51,7 +51,12 @@ app.use((request, response, next)=>{
 //Criando um objeto para controlar a chegada dos dados da requisição em formato JSON
 const bodyParserJSON = bodyParser.json();
 
+app.get('/v2/livraria', cors(), async function(request, response){
 
+        response.json({message: 'Acesso não permitido'});
+        response.status(401);
+
+});
 
 //EndPoint: Versão 2.0 - retorna todos os filmes do Banco de Dados
           //Período de funcionamento: 02/2024
